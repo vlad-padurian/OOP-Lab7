@@ -329,3 +329,73 @@ public:
         std::cout << "null\n";
     }
 };
+
+int main() {
+    std::cout << "===== SINGLY LINKED LIST INVENTORY =====\n";
+
+    SinglyLinkedList<Item> s;
+
+    s.push_front(Item("Wood", 16));
+    s.push_back(Item("Sword", 1));
+    s.push_back(Item("Apple", 5));
+    s.print();
+
+    s.pop_front();
+    s.pop_back();
+    s.print();
+
+    s.push_front(Item("Wood", 16));
+    s.push_back(Item("Sword", 1));
+    s.push_back(Item("Apple", 5));
+
+    std::cout << "at(1): " << s.at(1) << "\n";
+
+    s.insert(1, Item("Stone", 32));
+    s.print();
+
+    s.remove(1);
+    s.print();
+
+    std::cout << "size: " << s.getSize() << "\n";
+
+    std::cout << "empty: " << (s.isEmpty() ? "yes" : "no") << "\n";
+
+    std::cout << "find Sword: " << s.find(Item("Sword", 0)) << "\n";
+
+    s.print();
+
+    std::cout << "\n===== DOUBLY LINKED LIST INVENTORY =====\n";
+
+    DoublyLinkedList<Item> d;
+
+    d.push_front(Item("Wood", 16));
+    d.push_back(Item("Sword", 1));
+    d.push_back(Item("Apple", 5));
+    d.print();
+
+    d.pop_front();
+    d.pop_back();
+    d.print();
+
+    d.push_front(Item("Wood", 16));
+    d.push_back(Item("Sword", 1));
+    d.push_back(Item("Apple", 5));
+
+    std::cout << "at(1): " << d.at(1) << "\n";
+
+    d.insert(1, Item("Stone", 32));
+    d.print();
+
+    d.remove(1);
+    d.print();
+
+    std::cout << "size: " << d.getSize() << "\n";
+
+    std::cout << "empty: " << (d.isEmpty() ? "yes" : "no") << "\n";
+
+    std::cout << "find Sword: " << d.find(Item("Sword", 0)) << "\n";
+
+    d.print();
+
+    return 0;
+}
